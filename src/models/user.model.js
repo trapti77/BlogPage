@@ -1,39 +1,37 @@
 import mongoose, { Schema } from "mongoose";
 
-const userSchema = new Schema({
+const userSchema = new Schema(
+  {
     name: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     category: {
-        type: String,
-        required: true,
-        unique: true,  // Ensure this is what you need, or remove it if categories can repeat
-        lowercase: true,
-        trim: true,
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
     },
     title: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     description: {
-        type: String,
-        required: true,
-        maxlength: 500,  // Example: Limit description length
+      type: String,
+      required: true,
+      maxlength: 500,
     },
     avatar: {
-        type: String,
-        required: true,  // Avatar is required, so ensure upload is handled
+      type: String,
+      required: true,
     },
     coverimage: {
-        type: String,
-        default: "",  // Optional, set a default if necessary
+      type: String,
+      default: "",
     },
-    refreshToken: {
-        type: String,
-        default: "",  // Optional, can be null initially
-    },
-}, { timestamps: true });
+  },
+  { timestamps: true }
+);
 
-// Export the User model
-export const User = mongoose.model("User", userSchema);
+export const Blog = mongoose.model("Blog", userSchema);
