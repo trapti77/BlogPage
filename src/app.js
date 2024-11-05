@@ -22,7 +22,9 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 import userRouter from "./routes/user.route.js";
+import regiterRouter from "./routes/lab.route.js";
 
+app.use("/api/lab", regiterRouter);
 app.use("/api/blogs", userRouter);
 
 export { app };
