@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import morgan from "morgan";
 
 dotenv.config({ path: "./.env" });
 
@@ -18,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
-
+app.use(morgan("dev"));
 app.use(cookieParser());
 
 import userRouter from "./routes/user.route.js";
