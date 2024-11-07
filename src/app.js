@@ -24,8 +24,9 @@ app.use(cookieParser());
 
 import userRouter from "./routes/user.route.js";
 import regiterRouter from "./routes/lab.route.js";
+import blabRouter from "./routes/blab.route.js";
 
 app.use("/api/lab", regiterRouter);
 app.use("/api/blogs", userRouter);
-
+app.use("/api/labs", blabRouter);
 export { app };
